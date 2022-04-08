@@ -33,7 +33,7 @@ def well():
      well_number = args.get("well")
      connection = get_db_connection()
      cur = connection.cursor()
-     cur.execute("SELECT * FROM cur WHERE well_number = {well_number}")
+     cur.execute("SELECT * FROM final_df WHERE well_number = {well_number}")
      rows = cur.fetchall()
      well_number, year, oil, gas, brine = rows[8]
      return {"oil":oil, "gas":gas, "brine":brine}
